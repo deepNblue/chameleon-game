@@ -4,7 +4,7 @@ import { Insect } from '../entities/Insect';
 import { Enemy } from '../entities/Enemy';
 import { EnergySystem } from '../systems/EnergySystem';
 import { ColorSystem } from '../systems/ColorSystem';
-import { GameConfig } from '../config/GameConfig';
+import GameConfig from '../config/GameConfig';
 
 export class GameScene extends Phaser.Scene {
   private chameleon!: Chameleon;

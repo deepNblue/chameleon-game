@@ -59,7 +59,6 @@ export class EnergySystem {
   private criticalEnergyThreshold: number;
   
   private isRecovering: boolean = false;
-  private lastRecoveryTime: number = 0;
   private recoveryAccumulator: number = 0;
   
   private eventListeners: Map<EnergyEventType, EnergyEventCallback[]> = new Map();

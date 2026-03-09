@@ -204,24 +204,24 @@ export class Enemy extends Phaser.GameObjects.Container {
     // 状态机更新
     switch (this.currentState) {
       case EnemyState.IDLE:
-        this.updateIdle(delta);
+        this.updateIdle(_delta);
         break;
       case EnemyState.PATROL:
-        this.updatePatrol(delta);
+        this.updatePatrol(_delta);
         break;
       case EnemyState.CHASE:
-        this.updateChase(delta);
+        this.updateChase(_delta);
         break;
       case EnemyState.ATTACK:
-        this.updateAttack(delta);
+        this.updateAttack(_delta);
         break;
       case EnemyState.RETURN:
-        this.updateReturn(delta);
+        this.updateReturn(_delta);
         break;
     }
     
     // 动画更新
-    this.updateAnimation(delta);
+    this.updateAnimation(_delta);
     
     // 更新朝向
     this.updateDirection();
@@ -292,7 +292,6 @@ export class Enemy extends Phaser.GameObjects.Container {
     
     // 检查是否丢失目标
     if (distanceToPlayer > this.loseSightRange) {
-      this.lastKnownPlayerPos = new Phaser.Math.Vector2(this.target.x, this.target.y);
       this.changeState(EnemyState.RETURN);
       return;
     }
@@ -389,7 +388,7 @@ export class Enemy extends Phaser.GameObjects.Container {
     // 清理状态相关资源
   }
 
-  private updateAnimation(delta: number): void {
+  private updateAnimation(_delta: number): void {
     this.animationTimer += delta;
     
     // 简单的动画效果

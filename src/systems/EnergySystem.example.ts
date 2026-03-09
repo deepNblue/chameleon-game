@@ -8,8 +8,7 @@ import {
   EnergySystem, 
   EnergyConfig, 
   EnergyCostType, 
-  EnergyEventType,
-  DEFAULT_ENERGY_CONFIG 
+  EnergyEventType
 } from './EnergySystem';
 
 /**
