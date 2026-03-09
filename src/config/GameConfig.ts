@@ -289,6 +289,30 @@ export const EnergyConfig = {
 
 // ==================== 关卡配置 ====================
 
+export const LEVELS = [
+  {
+    name: '森林新手',
+    backgroundColor: 0x228b22,
+    insects: 10,
+    enemies: 1,
+    duration: 60000, // 60秒
+  },
+  {
+    name: '草原狩猎',
+    backgroundColor: 0x3cb371,
+    insects: 15,
+    enemies: 2,
+    duration: 90000, // 90秒
+  },
+  {
+    name: '丛林危机',
+    backgroundColor: 0x2e8b57,
+    insects: 20,
+    enemies: 3,
+    duration: 120000, // 120秒
+  },
+];
+
 export const LevelConfig = {
   // 第一关：森林入门
   level1: {

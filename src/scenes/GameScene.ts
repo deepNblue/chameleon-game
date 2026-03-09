@@ -4,7 +4,7 @@ import { Insect } from '../entities/Insect';
 import { Enemy } from '../entities/Enemy';
 import { EnergySystem } from '../systems/EnergySystem';
 import { ColorSystem } from '../systems/ColorSystem';
-import GameConfig from '../config/GameConfig';
+import { LEVELS } from '../config/GameConfig';
 
 export class GameScene extends Phaser.Scene {
   private chameleon!: Chameleon;
@@ -24,7 +24,7 @@ export class GameScene extends Phaser.Scene {
 
   create(): void {
     // 设置背景色
-    const levelConfig = GameConfig.LEVELS[this.currentLevel];
+    const levelConfig = LEVELS[this.currentLevel];
     this.cameras.main.setBackgroundColor(levelConfig.backgroundColor);
 
     // 创建变色龙

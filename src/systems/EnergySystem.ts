@@ -191,7 +191,6 @@ export class EnergySystem {
    */
   startRecovery(): void {
     this.isRecovering = true;
-    this.lastRecoveryTime = Date.now();
   }
 
   /**

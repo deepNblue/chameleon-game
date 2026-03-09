@@ -273,7 +273,7 @@ export class Enemy extends Phaser.GameObjects.Container {
     }
   }
 
-  private updateChase(delta: number): void {
+  private updateChase(_delta: number): void {
     if (!this.target) {
       this.changeState(EnemyState.RETURN);
       return;
@@ -389,7 +389,7 @@ export class Enemy extends Phaser.GameObjects.Container {
   }
 
   private updateAnimation(_delta: number): void {
-    this.animationTimer += delta;
+    this.animationTimer += _delta;
     
     // 简单的动画效果
     if (this.enemyType === 'snake') {
