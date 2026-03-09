@@ -220,12 +220,11 @@ export class GameScene extends Phaser.Scene {
 
   private hitEnemy(
     _chameleon: Phaser.GameObjects.GameObject,
-    enemyObj: Phaser.GameObjects.GameObject
+    _enemyObj: Phaser.GameObjects.GameObject
   ): void {
-    const enemy = enemyObj as Enemy;
     const bgColor = ColorSystem.getBackgroundColor(this);
     const matchPercent = ColorSystem.calculateMatch(this.chameleon.getColor(), bgColor);
-    
+
     // 如果隐身度不够，游戏结束
     if (!ColorSystem.isHidden(matchPercent)) {
       this.gameOver();

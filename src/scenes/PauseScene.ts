@@ -1,8 +1,6 @@
 import Phaser from 'phaser';
 
 export class PauseScene extends Phaser.Scene {
-  private gameScene!: Phaser.Scene;
-
   constructor() {
     super({ key: 'PauseScene' });
   }
@@ -11,7 +9,7 @@ export class PauseScene extends Phaser.Scene {
     const { width, height } = this.cameras.main;
 
     // 半透明背景
-    const bg = this.add.rectangle(width / 2, height / 2, width, height, 0x000000, 0.7);
+    this.add.rectangle(width / 2, height / 2, width, height, 0x000000, 0.7);
 
     // 暂停标题
     const title = this.add.text(width / 2, height / 3, '游戏暂停', {

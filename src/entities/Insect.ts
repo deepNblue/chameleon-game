@@ -20,9 +20,9 @@ export class Insect extends Phaser.GameObjects.Container {
     this.insectType = type;
 
     // 根据类型设置属性
-    const config = InsectConfig[type.toUpperCase() as keyof typeof InsectConfig];
-    this.scoreValue = config.SCORE;
-    this.moveSpeed = config.SPEED;
+    const config = InsectConfig[type];
+    this.scoreValue = config.score;
+    this.moveSpeed = config.speed;
 
     // 创建昆虫图形
     const graphics = scene.add.graphics();

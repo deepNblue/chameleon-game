@@ -27,7 +27,7 @@ const config: Phaser.Types.Core.GameConfig = {
 };
 
 // 创建游戏实例
-const game = new Phaser.Game(config);
+new Phaser.Game(config);
 
 // 移除加载提示
 window.addEventListener('load', () => {

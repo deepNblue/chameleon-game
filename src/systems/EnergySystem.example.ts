@@ -89,29 +89,29 @@ function eventListenerExample() {
   const energySystem = new EnergySystem();
   
   // 监听能量消耗事件
-  energySystem.on(EnergyEventType.CONSUMED, (eventType, current, max, data) => {
+  energySystem.on(EnergyEventType.CONSUMED, (_eventType, current, max, data) => {
     console.log(`⚡ 能量消耗: ${data.amount}点 (类型: ${data.type})`);
     console.log(`   当前能量: ${current}/${max}`);
   });
   
   // 监听能量恢复事件
-  energySystem.on(EnergyEventType.RECOVERED, (eventType, current, max, data) => {
+  energySystem.on(EnergyEventType.RECOVERED, (_eventType, current, max, data) => {
     console.log(`💚 能量恢复: ${data.amount}点`);
     console.log(`   当前能量: ${current}/${max}`);
   });
   
   // 监听低能量警告
-  energySystem.on(EnergyEventType.LOW, (eventType, current, max) => {
+  energySystem.on(EnergyEventType.LOW, (_eventType, current, max) => {
     console.log(`⚠️ 低能量警告! 当前能量: ${current}/${max} (${Math.round(current/max*100)}%)`);
   });
   
   // 监听极低能量警告
-  energySystem.on(EnergyEventType.CRITICAL, (eventType, current, max) => {
+  energySystem.on(EnergyEventType.CRITICAL, (_eventType, current, max) => {
     console.log(`🔴 极低能量警告! 当前能量: ${current}/${max} (${Math.round(current/max*100)}%)`);
   });
   
   // 监听能量耗尽
-  energySystem.on(EnergyEventType.EMPTY, (eventType, current, max, data) => {
+  energySystem.on(EnergyEventType.EMPTY, (_eventType, _current, _max, data) => {
     console.log(`❌ 能量不足! 需要: ${data.required}, 拥有: ${data.available}`);
   });
   

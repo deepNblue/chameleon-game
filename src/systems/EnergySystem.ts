@@ -412,6 +412,21 @@ export class EnergySystem {
     
     return cost;
   }
+
+  /**
+   * 改变颜色（消耗能量）
+   * @returns 是否有足够能量改变颜色
+   */
+  changeColor(): boolean {
+    return this.consume(20, EnergyCostType.TRANSFORMATION);
+  }
+
+  /**
+   * 吃昆虫（恢复能量）
+   */
+  eatInsect(): void {
+    this.recover(10);
+  }
 }
 
 // 导出默认配置

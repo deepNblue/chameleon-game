@@ -35,14 +35,12 @@ export class Enemy extends Phaser.GameObjects.Container {
   private attackRange: number = 40;
   private loseSightRange: number = 250;
   private target: Chameleon | null = null;
-  private lastKnownPlayerPos: Phaser.Math.Vector2 | null = null;
 
   // 初始位置（用于返回巡逻）
   private homePosition: Phaser.Math.Vector2;
 
   // 动画相关
   private animationTimer: number = 0;
-  private direction: number = 1; // 1 = 右, -1 = 左
 
   constructor(
     scene: Phaser.Scene,
@@ -202,7 +200,7 @@ export class Enemy extends Phaser.GameObjects.Container {
     this.target = player;
   }
 
-  update(_time: number, delta: number): void {
+  update(_time: number, _delta: number): void {
     // 状态机更新
     switch (this.currentState) {
       case EnemyState.IDLE:
@@ -409,10 +407,8 @@ export class Enemy extends Phaser.GameObjects.Container {
   private updateDirection(): void {
     // 根据速度方向更新朝向
     if (this.physicsBody.velocity.x > 10) {
-      this.direction = 1;
       this.sprite.setScale(1, 1);
     } else if (this.physicsBody.velocity.x < -10) {
-      this.direction = -1;
       this.sprite.setScale(-1, 1);
     }
   }
