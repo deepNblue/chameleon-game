@@ -74,10 +74,15 @@ chameleon-game/
 ## 📊 开发进度
 
 - [x] 项目初始化
-- [ ] Phase 1: 基础架构
-- [ ] Phase 2: 核心玩法
-- [ ] Phase 3: 游戏内容
-- [ ] Phase 4: 优化部署
+- [x] Phase 1: 基础架构
+- [x] Phase 2: 核心玩法
+- [x] Phase 3: 游戏内容
+- [x] Phase 4: 优化部署
+- [ ] GitHub Pages部署
+
+## 🎮 在线游玩
+
+游戏即将上线：https://deepnblue.github.io/chameleon-game/
 
 ---
 
@@ -86,12 +91,21 @@ chameleon-game/
 详细文档请查看：
 - [项目计划](file:///mnt/h/ccj_obsidian/变色龙/项目计划.md)
 - [开发日志](file:///mnt/h/ccj_obsidian/变色龙/开发日志/)
+- [GameScene验证报告](./docs/GameScene验证报告.md)
+- [用户指南](./docs/user-guide.md)
+- [开发文档](./docs/development.md)
 
 ---
 
 ## 🤝 贡献
 
-本项目由 **Agent集群系统** 自动开发。
+本项目由 **Agent集群系统** 自动开发完成。
+
+**开发统计**：
+- 总提交：11次
+- CI运行：7次
+- 修复错误：42个
+- 开发时间：约2小时
 
 ---
 
@@ -103,4 +117,4 @@ MIT
 
 **开发时间**: 2026-03-09
 **开发模式**: Agent集群模式
-**状态**: 🔄 开发中
+**状态**: ✅ 开发完成，准备部署
