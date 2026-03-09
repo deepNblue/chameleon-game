@@ -1,0 +1,32 @@
+{
+  "name": "chameleon-game",
+  "version": "1.0.0",
+  "description": "变色龙大冒险 - 网页休闲益智游戏",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "preview": "vite preview",
+    "lint": "eslint src --ext .ts",
+    "format": "prettier --write \"src/**/*.ts\""
+  },
+  "keywords": [
+    "game",
+    "phaser",
+    "chameleon",
+    "html5",
+    "typescript"
+  ],
+  "author": "Agent Cluster System",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/node": "^20.11.0",
+    "typescript": "^5.3.3",
+    "vite": "^5.0.12",
+    "eslint": "^8.56.0",
+    "prettier": "^3.2.4"
+  },
+  "dependencies": {
+    "phaser": "^3.70.0"
+  }
+}
