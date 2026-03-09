@@ -167,6 +167,12 @@ export class GameScene extends Phaser.Scene {
         this.updateEnergyBar();
       }
     });
+
+    // ESC键暂停
+    this.input.keyboard?.on('keydown-ESC', () => {
+      this.scene.pause();
+      this.scene.launch('PauseScene');
+    });
   }
 
   private setupCollisions(): void {
