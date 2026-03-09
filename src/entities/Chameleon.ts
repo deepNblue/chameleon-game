@@ -1,10 +1,10 @@
 import Phaser from 'phaser';
 
 export class Chameleon extends Phaser.GameObjects.Container {
-  private body!: Phaser.GameObjects.ArcadeBody;
+  declare body: Phaser.Physics.Arcade.Body;
   private color: number = 0x4a9eff; // 当前颜色
   private targetColor: number = 0x4a9eff; // 目标颜色
-  private transitionSpeed: number = 0.1;
+  private _transitionSpeed: number = 0.1;
 
   constructor(scene: Phaser.Scene, x: number, y: number) {
     super(scene, x, y);
@@ -31,13 +31,14 @@ export class Chameleon extends Phaser.GameObjects.Container {
     tail.lineStyle(8, this.color, 1);
     tail.beginPath();
     tail.moveTo(30, 0);
-    tail.quadraticCurveTo(50, -20, 60, 0);
+    // 使用 lineTo 代替 quadraticCurveTo
+    tail.lineTo(45, -10);
+    tail.lineTo(60, 0);
     tail.strokePath();
     this.add(tail);
 
     // 设置物理属性
     scene.physics.add.existing(this);
-    this.body = this.body as Phaser.GameObjects.ArcadeBody;
     this.body.setCollideWorldBounds(true);
     this.body.setCircle(30);
 

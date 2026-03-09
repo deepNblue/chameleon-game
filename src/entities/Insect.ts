@@ -1,10 +1,10 @@
 import Phaser from 'phaser';
-import { GameConfig } from '../config/GameConfig';
+import { InsectConfig } from '../config/GameConfig';
 
 export type InsectType = 'butterfly' | 'bee' | 'cricket';
 
 export class Insect extends Phaser.GameObjects.Container {
-  private body!: Phaser.GameObjects.ArcadeBody;
+  declare body: Phaser.Physics.Arcade.Body;
   private insectType: InsectType;
   private scoreValue: number;
   private moveSpeed: number;
@@ -20,7 +20,7 @@ export class Insect extends Phaser.GameObjects.Container {
     this.insectType = type;
 
     // 根据类型设置属性
-    const config = GameConfig.INSECTS[type.toUpperCase() as keyof typeof GameConfig.INSECTS];
+    const config = InsectConfig[type.toUpperCase() as keyof typeof InsectConfig];
     this.scoreValue = config.SCORE;
     this.moveSpeed = config.SPEED;
 
@@ -54,7 +54,6 @@ export class Insect extends Phaser.GameObjects.Container {
 
     // 设置物理属性
     scene.physics.add.existing(this);
-    this.body = this.body as Phaser.GameObjects.ArcadeBody;
     this.body.setCollideWorldBounds(true);
     this.body.setCircle(20);
 
@@ -79,7 +78,7 @@ export class Insect extends Phaser.GameObjects.Container {
     this.scene.physics.velocityFromAngle(angle, this.moveSpeed, this.body.velocity);
   }
 
-  update(time: number, delta: number): void {
+  update(_time: number, delta: number): void {
     this.moveTimer += delta;
 
     // 每隔一段时间改变方向
