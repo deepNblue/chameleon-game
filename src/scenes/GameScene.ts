@@ -111,7 +111,7 @@ export class GameScene extends Phaser.Scene {
     });
 
     // 关卡信息
-    const levelConfig = GameConfig.LEVELS[this.currentLevel];
+    const levelConfig = LEVELS[this.currentLevel];
     this.add.text(this.cameras.main.width - 20, 20, `关卡: ${levelConfig.name}`, {
       fontSize: '20px',
       color: '#ffffff',
@@ -249,7 +249,7 @@ export class GameScene extends Phaser.Scene {
     // 进入下一关或游戏结束
     this.currentLevel++;
     
-    if (this.currentLevel >= GameConfig.LEVELS.length) {
+    if (this.currentLevel >= LEVELS.length) {
       // 游戏胜利
       this.scene.start('GameOverScene', { score: this.score });
     } else {
