@@ -4,7 +4,6 @@ export class Chameleon extends Phaser.GameObjects.Container {
   declare body: Phaser.Physics.Arcade.Body;
   private color: number = 0x4a9eff; // 当前颜色
   private targetColor: number = 0x4a9eff; // 目标颜色
-  private _transitionSpeed: number = 0.1;
 
   constructor(scene: Phaser.Scene, x: number, y: number) {
     super(scene, x, y);

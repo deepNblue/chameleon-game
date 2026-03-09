@@ -35,14 +35,14 @@ export class Enemy extends Phaser.GameObjects.Container {
   private attackRange: number = 40;
   private loseSightRange: number = 250;
   private target: Chameleon | null = null;
-  private _lastKnownPlayerPos: Phaser.Math.Vector2 | null = null;
-  
+  private lastKnownPlayerPos: Phaser.Math.Vector2 | null = null;
+
   // 初始位置（用于返回巡逻）
   private homePosition: Phaser.Math.Vector2;
-  
+
   // 动画相关
   private animationTimer: number = 0;
-  private _direction: number = 1; // 1 = 右, -1 = 左
+  private direction: number = 1; // 1 = 右, -1 = 左
 
   constructor(
     scene: Phaser.Scene,
@@ -243,7 +243,7 @@ export class Enemy extends Phaser.GameObjects.Container {
     }
   }
 
-  private updatePatrol(delta: number): void {
+  private updatePatrol(_delta: number): void {
     // 检测玩家
     if (this.detectPlayer()) {
       this.changeState(EnemyState.CHASE);
@@ -308,7 +308,7 @@ export class Enemy extends Phaser.GameObjects.Container {
     );
   }
 
-  private updateAttack(delta: number): void {
+  private updateAttack(_delta: number): void {
     // 停止移动
     this.physicsBody.setVelocity(0, 0);
     
@@ -320,7 +320,7 @@ export class Enemy extends Phaser.GameObjects.Container {
     this.changeState(EnemyState.IDLE);
   }
 
-  private updateReturn(delta: number): void {
+  private updateReturn(_delta: number): void {
     // 返回初始位置或巡逻路线
     const distanceToHome = Phaser.Math.Distance.Between(
       this.x, this.y,
@@ -387,7 +387,7 @@ export class Enemy extends Phaser.GameObjects.Container {
     }
   }
 
-  private onStateExit(state: EnemyState): void {
+  private onStateExit(_state: EnemyState): void {
     // 清理状态相关资源
   }
 
